@@ -1,0 +1,20 @@
+<app-header></app-header>
+<main class="py-3">
+    <div class="flex flex-wrap">
+            @for(pokemon of pokemonList; track pokemon) {
+                <div class="w-1/6 shadow text-center flex flex-col justify-center items-center py-16">
+                    <img [src]="pokemon.sprites.front_default" class="" alt="">
+                    <h1>{{pokemon.name | uppercase}}</h1>
+                    <div class="flex gap-2">
+                        @for(type of pokemon.types; track type) {
+                            <div class="flex gap-2" [ngClass]="type.type.name">
+                            
+                            <h1>{{type.type.name}}</h1>
+                        </div>
+                        }
+                    </div>
+                    
+                </div>
+            }
+    </div>
+</main>
